@@ -200,7 +200,8 @@ export async function fetchCustomers() {
     const customers = data.rows;
     return customers;
   } catch (err) {
-    throw new Error('Failed to fetch all customers.');
+    console.error('Database Error:', err);
+    // throw new Error('Failed to fetch all customers.');
   }
 }
 
@@ -233,7 +234,7 @@ export async function fetchFilteredCustomers(query: string,  currentPage: number
       total_paid: formatCurrency(customer.total_paid),
     }));
 
-    return data.rows;
+    return customers;
   } catch (err) {
     console.error('Database Error:', err);
     // throw new Error('Failed to fetch customer table.');
