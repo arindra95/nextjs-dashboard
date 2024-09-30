@@ -205,6 +205,7 @@ export async function fetchCustomers() {
   }
 }
 
+//filter invoice
 export async function fetchFilteredCustomers(query: string,  currentPage: number) {
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
